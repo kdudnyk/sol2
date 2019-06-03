@@ -1027,7 +1027,8 @@ namespace sol { namespace u_detail {
 				// not destructible: serialize a
 				// "hey you messed up"
 				// destructor
-				stack::set_field<false, true>(L, meta_function::garbage_collect, &detail::cannot_destruct<T>, t.stack_index());
+				std::cerr<<"Are you sure you didn't forgot to set a destructor?"<< std::endl;
+				//~ stack::set_field<false, true>(L, meta_function::garbage_collect, &detail::cannot_destruct<T>, t.stack_index());
 			}
 
 			static_assert(sizeof(void*) <= sizeof(detail::inheritance_check_function),
